@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.rts.pojoclasses.BusinessUnitPojo" table="BUSINESS_UNIT">
+    <id name="buId" type="int">
+      <column name="BU_ID"/>
+      <generator class="increment"/>
+    </id>
+    <property name="buName" type="string">
+      <column name="BU_NAME" not-null="true" unique="true"/>
+    </property>
+  </class>
+</hibernate-mapping>

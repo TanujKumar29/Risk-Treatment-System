@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.rts.pojoclasses.RiskControlMeasure" table="CONTROL_MEASURE">
+    <composite-id class="com.rts.pojoclasses.RiskControl" name="riskControl">
+      <key-property column="CONTROL_CODE" name="controlCode"/>
+      <key-many-to-one class="com.rts.pojoclasses.RiskTreatment" column="RISK_TREATMENT_ID" name="riskTreatment"> </key-many-to-one>
+    </composite-id>
+  </class>
+</hibernate-mapping>

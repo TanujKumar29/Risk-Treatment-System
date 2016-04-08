@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.rts.pojoclasses.SF_Spoc" table="SF_SPOC">
+    <id name="sfSpocId" type="int">
+      <column name="SF_SPOC_ID"/>
+      <generator class="increment"/>
+    </id>
+    <property name="sfSpocName" type="string">
+      <column length="20" name="SF_SPOC_NAME" not-null="true"/>
+    </property>
+    <many-to-one class="com.rts.pojoclasses.SFID" fetch="select" name="supportFunctions">
+      <column name="SF_ID" not-null="true"/>
+    </many-to-one>
+  </class>
+</hibernate-mapping>

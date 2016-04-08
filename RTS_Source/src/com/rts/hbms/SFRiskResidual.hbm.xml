@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.rts.pojoclasses.SFRiskResidual" table="SFRISK_RESIDUAL">
+    <id name="riskResidualId" type="int">
+      <column name="RISK_RESIDUAL_ID"/>
+      <generator class="increment"/>
+    </id>
+    <property name="residualImpact" type="string">
+      <column length="255" name="RECEDUAL_IMPACT"/>
+    </property>
+    <property name="residualLikelihood" type="string">
+      <column length="255" name="RESIDUAL_LIKELIHOOD"/>
+    </property>
+    <property name="residualExposure" type="string">
+      <column length="255" name="RESIDUAL_EXPOSURE"/>
+    </property>
+    <property name="ResidualCategory" type="string">
+      <column length="255" name="RESIDUAL_CATEGORY"/>
+    </property>
+    <many-to-one class="com.rts.pojoclasses.SFRiskTreatment" lazy="false" name="SFRISK_TREATMENT">
+      <column name="RISK_TREATMENT_ID" not-null="true"/>
+    </many-to-one>
+   </class>
+</hibernate-mapping>

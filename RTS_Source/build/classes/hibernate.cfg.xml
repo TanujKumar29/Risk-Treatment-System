@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		
+            <!-- Database connection settings -->
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost/rts</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">tiger</property>
+
+        <!-- JDBC connection pool (use the built-in) -->
+        <property name="connection.pool_size">1</property>
+
+        <!-- SQL dialect -->
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+
+      
+
+        <!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">true</property>
+
+        <!-- Drop and re-create the database schema on startup -->
+        <property name="hbm2ddl.auto">update</property>
+
+            <mapping resource="com/rts/hbms/BusinessUnit.hbm.xml"/>
+            <mapping resource="com/rts/hbms/Projects.hbm.xml"/>
+            <mapping resource="com/rts/hbms/ProjectSpoc.hbm.xml"/>
+            <mapping resource="com/rts/hbms/Assets.hbm.xml"/>
+            <mapping resource="com/rts/hbms/ContractReq.hbm.xml"/>
+            <mapping resource="com/rts/hbms/Threats.hbm.xml"/>
+            <mapping resource="com/rts/hbms/Vulnarabilities.hbm.xml"/>
+            <mapping resource="com/rts/hbms/AssetsThreatsVuln.hbm.xml"/>
+            <mapping resource="com/rts/hbms/RiskEvaluation.hbm.xml"/>
+            <mapping resource="com/rts/hbms/RiskTreatment.hbm.xml"/>
+            <mapping resource="com/rts/hbms/SFID.hbm.xml"/>
+            <mapping resource="com/rts/hbms/SF_Spoc.hbm.xml "/>
+            <mapping resource="com/rts/hbms/SF_Assets.hbm.xml"/>
+            <mapping resource="com/rts/hbms/SFThreats.hbm.xml"/>
+            <mapping resource="com/rts/hbms/SFVulnarabilities.hbm.xml"/>
+            <mapping resource="com/rts/hbms/SFAssetsThreatsVuln.hbm.xml"/>
+            <mapping resource="com/rts/hbms/SFRiskEvaluation.hbm.xml"/>
+            <mapping resource="com/rts/hbms/SFRiskTreatment.hbm.xml"/>
+            <mapping resource="com/rts/hbms/Control.hbm.xml"/>
+            <mapping resource="com/rts/hbms/RiskControlMeasure.hbm.xml"/>
+            <mapping resource="com/rts/hbms/ResidualRisk.hbm.xml"/>
+
+    </session-factory>
+</hibernate-configuration>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.rts.pojoclasses.Vulnarabilities" table="VULNARABILITIES">
+    <id name="vulnarabilityId" type="int">
+      <column name="VULNARABILITY_ID" not-null="true"/>
+      <generator class="increment"/>
+    </id>
+    <property name="vulnarabilityName" type="string">
+      <column length="200" name="VULNARABILITY_NAME" not-null="true" unique="true"/>
+    </property>
+    <property name="vulnarabilityDescription" type="string">
+      <column length="60" name="VULNARABILITY_DESCRIPTION"/>
+    </property>
+  </class>
+</hibernate-mapping>

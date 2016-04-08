@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.rts.pojoclasses.ContractReq" table="CONTRACTREQ">
+    <id column="CONTRACTID" name="contractReqId" type="integer">
+      <generator class="increment"/>
+    </id>
+    <property name="controlCategory">
+      <column default="0" name="CONTROLCAT"/>
+    </property>
+    <property name="clause" not-null="true">
+      <column name="CONTROLCLAUSE"/>
+    </property>
+    <property name="compliance" not-null="true">
+      <column name="COMPLIANCE"/>
+    </property>
+    <property name="description">
+      <column name="DESCRIPTION"/>
+    </property>
+    <property name="owner">
+      <column name="OWNER"/>
+    </property>
+    <property name="action">
+      <column name="ACTION"/>
+    </property>
+    <property name="deadline" type="date">
+      <column name="DEADLINE" sql-type="date"/>
+    </property>
+    <property name="evidance">
+      <column name="EVIDANCE"/>
+    </property>
+    <property name="comment">
+      <column name="COMMENT"/>
+    </property>
+    <many-to-one cascade="none" class="com.rts.pojoclasses.Projects" column="PROJECT_ID" lazy="false" name="projects"/>
+  </class>
+</hibernate-mapping>

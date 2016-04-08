@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.rts.pojoclasses.Assets" table="ASSETS">
+    <id name="assetId" type="int">
+      <column name="ASSET_ID"/>
+      <generator class="increment"/>
+    </id>
+    <many-to-one cascade="none" class="com.rts.pojoclasses.Projects" lazy="false" name="projectId" not-null="true">
+      <column name="PROJECT_ID" not-null="true"/>
+    </many-to-one>
+    <property name="assetsName" not-null="true" type="string">
+      <column name="ASSET_NAME"/>
+    </property>
+    <property name="assetType" type="string">
+      <column name="ASSET_TYPE"/>
+    </property>
+    <property name="assetsDescription" type="string">
+      <column name="ASSET_DESCRIPTION"/>
+    </property>
+    <property name="assetsOwner" type="string">
+      <column name="ASSET_OWNER"/>
+    </property>
+    <property name="assetsIntegrity" not-null="true" type="int">
+      <column name="ASSET_INTEGRITY"/>
+    </property>
+    <property name="assetsAvailability" not-null="true" type="int">
+      <column name="ASSET_AVAILABILITY"/>
+    </property>
+    <property name="assetsConfidentiality" not-null="true" type="int">
+      <column name="ASSET_CONFIDENTIALITY"/>
+    </property>
+    <property name="assetsValue" not-null="true" type="float">
+      <column name="ASSET_VALUE"/>
+    </property>
+  </class>
+</hibernate-mapping>

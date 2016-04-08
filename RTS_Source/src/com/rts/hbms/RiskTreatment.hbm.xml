@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.rts.pojoclasses.RiskTreatment" table="RISK_TREATMENT">
+    <id name="riskTreatmentId" type="int">
+      <column name="RISK_TREATMENT_ID"/>
+      <generator class="increment"/>
+    </id>
+    <property name="riskTreatmentApproach" type="string">
+      <column length="255" name="RISK_TREATMENT_APPROACH"/>
+    </property>
+    <property name="riskDecisionReason" type="string">
+      <column length="255" name="DECISION_REASON"/>
+    </property>
+    <property name="comment" type="string">
+      <column length="255" name="COMMENT"/>
+    </property>
+    <many-to-one cascade="delete" class="com.rts.pojoclasses.RiskEvaluation" lazy="false" name="riskEvaluation">
+      <column name="RISK_EVALUATION_ID" not-null="true"/>
+    </many-to-one>
+  </class>
+</hibernate-mapping>

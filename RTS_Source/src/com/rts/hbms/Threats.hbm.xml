@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.rts.pojoclasses.Threats" table="THREATS">
+    <id name="threatId" type="int">
+      <column name="THREAT_ID"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="threatName" type="string">
+      <column length="200" name="THREAT_NAME" not-null="true"/>
+    </property>
+    <property name="threatType" type="string">
+      <column length="60" name="THREAT_TYPE" not-null="true"/>
+    </property>
+    <property name="threatDescription" type="string">
+      <column length="500" name="THREAT_DESCRIPTION"/>
+    </property>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.rts.pojoclasses.SFID" table="SUPPORT_FUNCTIONS">
+    <id name="SFId">
+      <column name="SFId"/>
+      <generator class="increment"/>
+    </id>
+    <property name="SF_Name" type="string">
+      <column name="SF_NAME" not-null="true"/>
+    </property>
+    <property name="SF_Owner" type="string">
+      <column name="SF_OWNER" not-null="false"/>
+    </property>
+  </class>
+</hibernate-mapping>

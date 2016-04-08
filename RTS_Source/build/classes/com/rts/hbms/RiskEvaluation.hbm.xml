@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.rts.pojoclasses.RiskEvaluation" table="RISK_EVALUATION">
+    <id name="riskEvaluationId" type="int">
+      <column name="RISK_EVALUATION_ID"/>
+      <generator class="increment"/>
+    </id>
+    <property name="riskCategory" type="string">
+      <column length="60" name="RISK_CATEGORY" not-null="true"/>
+    </property>
+    <property name="riskImpact" type="int">
+      <column length="60" name="RISK_IMPACT" not-null="true"/>
+    </property>
+    <property name="riskLikelihood" type="int">
+      <column length="60" name="RISK_LIKELIHOOD" not-null="true"/>
+    </property>
+    <property name="riskExposure" type="float">
+      <column length="60" name="RISK_EXPOSURE" not-null="true"/>
+    </property>
+    <!--    <property name="riskTreatmentApproach" type="string">
+      <column length="255" name="RISK_TREATMENT_APPROACH"/>
+    </property>
+    <property name="riskDescription" type="string">
+      <column length="255" name="DESCRIPTION"/>
+    </property>
+    <property name="riskDecisionReason" type="string">
+      <column length="255" name="DECISION_REASON"/>
+    </property>
+    <property name="residualLikelihood" type="string">
+      <column length="255" name="RECEDUAL_LIKELIHOOD"/>
+    </property>
+    <property name="residualImpact" type="string">
+      <column length="255" name="RECEDUAL_IMPACT"/>
+    </property>
+    <property name="ResedualCategory" type="string">
+      <column length="255" name="RECEDUAL_CATEGORY"/>
+    </property>-->
+    <many-to-one cascade="none" class="com.rts.pojoclasses.AssetsThreatsVuln" lazy="false" name="assetsThreatsVuln">
+      <column name="ASSET_THREAT_VULN_ID" not-null="true"/>
+    </many-to-one>
+    </class>
+</hibernate-mapping>

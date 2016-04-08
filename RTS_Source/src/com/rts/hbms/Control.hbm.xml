@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.rts.pojoclasses.Controls" table="CONTROLS">
+    <id name="controlId" type="int">
+      <column name="CONTROL_ID" not-null="true"/>
+      <generator class="increment"/>
+    </id>
+    <property name="controlCode" type="string">
+      <column length="60" name="CONTORL_CODE" not-null="true" unique="true"/>
+    </property>
+    <property name="controlName" type="string">
+      <column length="60" name="CONTORL_NAME" not-null="true" unique="true"/>
+    </property>
+    <property name="controlDescription" type="string">
+      <column length="500" name="CONTROL_DESCRIPTION"/>
+    </property>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.rts.pojoclasses.Residual_Risk" table="RESIDUAL_RISK">
+    <id name="residualId" type="int">
+      <column name="RESIDUAL_ID"/>
+      <generator class="increment"/>
+    </id>
+    <property name="resRiskCategory" type="string">
+      <column length="60" name="RESIDUAL_RISK_CATEGORY"/>
+    </property>
+    <property name="resRiskLikelihood" type="int">
+      <column length="60" name="RESIDUAL_RISK_LIKELIHOOD"/>
+    </property>
+    <property name="resRiskImpact" type="int">
+      <column length="60" name="RESIDUAL_RISK_IMPACT"/>
+    </property>
+    <property name="resRiskExposure" type="float">
+      <column length="60" name="RESIDUAL_RISK_EXPOSURE"/>
+    </property>
+    <many-to-one cascade="none" class="com.rts.pojoclasses.RiskTreatment" column="RISK_TREATMENT_ID" name="riskTreatment" unique="true"/>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.rts.pojoclasses.SFAssetsThreatsVuln" table="SFASSETS_THREATS_VULN">
+    <id name="assetsThreatsVulnId" type="int">
+      <column name="ASSET_THREAT_VULN_ID"/>
+      <generator class="increment"/>
+    </id>
+    <many-to-one cascade="none" class="com.rts.pojoclasses.SF_Assets" fetch="select" lazy="false" name="assets">
+      <column name="ASSET_ID" not-null="true"/>
+    </many-to-one>
+    <many-to-one cascade="none" class="com.rts.pojoclasses.SFThreats" fetch="select" lazy="false" name="threats">
+      <column name="THREAT_ID"/>
+    </many-to-one>
+    <many-to-one cascade="none" class="com.rts.pojoclasses.SFVulnarabilities" fetch="select" lazy="false" name="vulnerabilities">
+      <column name="VULNARABILITY_ID"/>
+    </many-to-one>
+  </class>
+</hibernate-mapping>
